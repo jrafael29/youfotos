@@ -34,7 +34,7 @@ const comment = ref({
 </script>
 
 <template>
-    <Head title="Home" />
+    <Head title="ImageView" />
     <header class="flex justify-between items-center px-10 py-5">
         <div>
             <a href="/">YouFotos.com</a>

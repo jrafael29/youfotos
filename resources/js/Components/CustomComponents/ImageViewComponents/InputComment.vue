@@ -1,13 +1,3 @@
-<template>
-    <div class="w-full">
-        <input v-model="comment" placeholder="Deixa seu comentario... :)" type="text" class="mb-3 bg-transparent outline-0 border-0 border-b-2 border-emerald-400 w-full">
-        <div v-if="showButtons" class=" flex justify-end">
-            <button class="btn btn-sm btn-ghost">cancelar</button>
-            <button @click="sendComment()" class="btn btn-sm btn-success">comentar</button>
-        </div>
-    </div>
-</template>
-
 <script>
 import { Inertia } from '@inertiajs/inertia';
 export default {
@@ -37,6 +27,16 @@ export default {
 
 }
 </script>
+<template>
+    <div class="w-full">
+        <input v-model="comment" placeholder="Deixa seu comentario... :)" type="text" class="mb-3 bg-transparent outline-0 border-0 border-b-2 border-emerald-400 w-full">
+        <div v-if="showButtons" class=" flex justify-end">
+            <button class="btn btn-sm btn-ghost">cancelar</button>
+            <button @click="sendComment()" class="btn btn-sm btn-success">comentar</button>
+        </div>
+    </div>
+</template>
+
 
 <style>
 

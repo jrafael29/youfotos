@@ -1,12 +1,20 @@
 <script setup>
 import { Head, Link } from '@inertiajs/inertia-vue3';
 import SuggestedImage from '../Components/CustomComponents/ImageViewComponents/SuggestedImage.vue';
+import { computed } from '@vue/runtime-core';
+import { Inertia } from '@inertiajs/inertia';
 
-defineProps({
+
+const props = defineProps({
     canLogin: Boolean,
     canRegister: Boolean,
-    images: Object
+    images: Object,
+    assets: String
 });
+
+const path_image = computed(() => {
+    return `${props.assets}storage/`;
+})
 
 </script>
 
@@ -31,50 +39,11 @@ defineProps({
 
     <main class="">
         <div class="flex justify-center w-full">
-            <div class="w-full md:w-2/3 flex gap-10 flex-wrap justify-center items-center bg-pink-400">
+            <div class="w-full md:w-2/3 flex gap-10 flex-wrap justify-center items-center">
 
-
-                
-
-                <div class=" mb-3 bg-red-600 w-1/4" >
-                    <figure>
-                        <img style="object-fit: cover;" src="https://placeimg.com/720/410/arch" alt="Shoes" />
-                    </figure>
-                    
-            
+                <div v-for="image in images" :key="image.id">
+                    <SuggestedImage :image="image" :path_image="path_image" />
                 </div>
-
-                <div class=" mb-3 bg-red-600 w-1/4" >
-                    <figure>
-                        <img style="object-fit: cover;" src="https://placeimg.com/720/410/arch" alt="Shoes" />
-                    </figure>
-                    
-            
-                </div>
-
-                <div class=" mb-3 bg-red-600 w-1/4" >
-                    <figure>
-                        <img style="object-fit: cover;" src="https://placeimg.com/720/410/arch" alt="Shoes" />
-                    </figure>
-                    
-            
-                </div>
-
-                <div class=" mb-3 bg-red-600 w-1/4" >
-                    <figure>
-                        <img style="object-fit: cover;" src="https://placeimg.com/720/410/arch" alt="Shoes" />
-                    </figure>
-                    
-            
-                </div>
-
-                <div class=" mb-3 bg-red-600 w-1/4" >
-                    <figure>
-                        <img style="object-fit: cover;" src="https://placeimg.com/720/410/arch" alt="Shoes" />
-                    </figure>              
-            
-                </div>
-
             </div>
            
         </div>

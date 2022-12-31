@@ -18,13 +18,7 @@ use App\Http\Controllers\Follower\FollowerController;
 |
 */
 
-Route::get('/', fn() => 
-    Inertia::render('Home', [
-        
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ])
-);
+Route::get('/', [HomeController::class, 'index']);
 
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified',])->group(function () {
     Route::get('/dashboard', fn() => Inertia::render('Dashboard'))->name('dashboard');

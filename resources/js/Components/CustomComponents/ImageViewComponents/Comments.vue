@@ -15,7 +15,7 @@ export default {
     methods: {
         async deleteComment(){
             if(this.userLoggedIsOwnerOfComment){
-                await this.$inertia.delete(`/imagem/${this.comment.image.id}/excluir-comentario/${this.comment.id}`)
+                const res = await this.$inertia.delete(`/imagem/${this.comment.image.id}/excluir-comentario/${this.comment.id}`)
                 Inertia.reload();
             }
         }

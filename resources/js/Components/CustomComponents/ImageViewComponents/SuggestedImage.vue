@@ -8,6 +8,9 @@ export default {
     computed: {
         getLinkImage(){
             return `/imagem/${this.image.id}`
+        },
+        getSrc(){
+            return `${this.path_image}${this.image.path_name.replace('public/', '')}`
         }
     }
 }
@@ -17,7 +20,7 @@ export default {
     <div class="flex justify-center">
         <a :href="getLinkImage">
             <figure>
-                <img style="max-width:220px;max-height:135px;object-fit: cover;" :src="path_image + this.image.path_name.replace('public/', '')" alt="Shoes" />
+                <img style="max-width:220px;max-height:135px;object-fit: cover;" :src="getSrc" alt="Shoes" />
             </figure>
         </a>
     </div>
