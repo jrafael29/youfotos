@@ -16,7 +16,7 @@ export default {
         async deleteComment(){
             if(this.userLoggedIsOwnerOfComment){
                 const res = await this.$inertia.delete(`/imagem/${this.comment.image.id}/excluir-comentario/${this.comment.id}`)
-                Inertia.reload();
+                //Inertia.reload();
             }
         }
     }
@@ -37,7 +37,7 @@ export default {
             </div>
         </div>
 
-        
+
         <div class="w-4/6">
             {{ comment.comment }}
         </div>
