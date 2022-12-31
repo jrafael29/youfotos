@@ -53,7 +53,6 @@ export default {
     },
     previewImage() {
 
-
         const file = this.$refs.imageInput.files[0];
         const reader = new FileReader();
 
